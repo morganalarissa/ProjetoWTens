@@ -62,14 +62,23 @@ function umClique(){
     },
   ];
 
-  aulas.push({
-    name: "Teste",
-    professor: "Teste",
-    horario: "Teste",
+aulas.push({
+    name: "incluir",
+    professor: "incluir",
+    horario: "incluir",
 })
 console.log(aulas)
 
+// Fizemos de duas formas, com o metodo acima e com o construtor abaixo: 
+/*function Aula(curso, professor, horario) {
+  this.curso = curso;
+  this.professor = professor;
+  this.horario = horario;
+}
 
+const novaAula = new Aula("violino", "maria", 19 );
+aulas.push(novaAula)
+console.log(aulas)*/
   
 
   
