@@ -25,7 +25,7 @@ function umClique(){
   }
 
     /* Contato */
-    
+    /*
     function Enviar() {
 
       let name = document.getElementById("nameid");
@@ -33,8 +33,36 @@ function umClique(){
       if (name.value != "") {
           alert('Obrigado sr(a) ' + name.value + ' os seus dados foram encaminhados com sucesso');
       }
-  
+  }*/
+
+// Validação de formulário  
+const formulario = document.forms['menu_form'];
+
+formulario.addEventListener("submit", function(event){
+  let errosArray = []
+  let inputName = document.querySelector("input.nameid");
+
+  if (inputName.value == "") {
+    errosArray.push('O campo deve estar completo')
+  }else if(inputName.value.length < 3){
+    errosArray.push('o campo nome deve ter pelo menos 3 caracteres')
   }
+  if (errosArray.length > 0) {
+    event.preventDefault();
+  }
+  let ulErros = document.querySelector('div.erros ul');
+  for(let i = 0; i < errosArray.length; i++){
+    ulErros.innerHTML += '<li>' + errosArray[i] + '</li>'
+  }
+});
+
+console.log(formulario)
+
+  /*enviar formulario*/
+  document.querySelector("#menu_form").onsubmit = function(event){
+    event.preventDefault();
+    console.log('quero enviar o formulario')
+}
 
 
   /* Aulas */
