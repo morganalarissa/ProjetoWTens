@@ -40,11 +40,11 @@ const formulario = document.forms['menu_form'];
 
 formulario.addEventListener("submit", function(event){
   let errosArray = []
-  let inputName = document.querySelector("input.nameid");
+  let inputNameid = document.querySelector("input.nameid");
 
-  if (inputName.value == "") {
+  if (inputNameid.value == "") {
     errosArray.push('O campo deve estar completo')
-  }else if(inputName.value.length < 3){
+  }else if(inputNameid.value.length < 3){
     errosArray.push('o campo nome deve ter pelo menos 3 caracteres')
   }
   if (errosArray.length > 0) {
