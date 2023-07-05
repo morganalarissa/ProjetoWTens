@@ -35,34 +35,45 @@ function umClique(){
       }
   }*/
 
-// Validação de formulário  
-const formulario = document.forms['menu_form'];
-
-formulario.addEventListener("submit", function(event){
-  let errosArray = []
-  let inputNameid = document.querySelector("input.nameid");
-
-  if (inputNameid.value == "") {
-    errosArray.push('O campo deve estar completo')
-  }else if(inputNameid.value.length < 3){
-    errosArray.push('o campo nome deve ter pelo menos 3 caracteres')
-  }
-  if (errosArray.length > 0) {
-    event.preventDefault();
-  }
-  let ulErros = document.querySelector('div.erros ul');
-  for(let i = 0; i < errosArray.length; i++){
-    ulErros.innerHTML += '<li>' + errosArray[i] + '</li>'
-  }
-});
-
-console.log(formulario)
-
   /*enviar formulario*/
   document.querySelector("#menu_form").onsubmit = function(event){
     event.preventDefault();
     console.log('quero enviar o formulario')
-}
+};
+
+
+// Validação de formulário  
+const formulario = document.forms['menu_form'];
+
+formulario.addEventListener("submit", function(event){
+  
+  let erros = []
+  let inputName = document.getElementById("nameid");
+/*perguntar pra prof se nesse caso estava dando erro pq o querySelector retorna 
+classe e nesse caso era pra pegar pelo id*/
+
+
+  if (inputName.value == "") {
+    erros.push("O campo deve estar completo")
+  }else if(inputName.value.length < 3){
+    erros.push("o campo nome deve ter pelo menos 3 caracteres")
+  }
+  if (erros.length > 0) {
+    event.preventDefault();
+    //imprimir erro na div 'erros' criada no html
+    let ulErros = document.querySelector("div.erros ul");
+  for(let i = 0; i < erros.length; i++){
+    ulErros.innerHTML += '<li>' + erros[i] + '</li>'}  
+  }
+  localStorage.setItem('Nome', inputName.value)
+});
+
+
+
+// como vejo o que o usuario imprimiu?
+console.log(formulario.innerHTML)
+
+
 
 
   /* Aulas */
