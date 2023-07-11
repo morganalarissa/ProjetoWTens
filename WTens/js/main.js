@@ -13,33 +13,28 @@ function umClique(){
   }
   
 
-  /* Newsletter */
+  /* Validação Newsletter */
 
-  function verificaForm(){
-    if(document.getElementById("email").value == ""){
+  const newsletter = document.querySelector("#form_news");
+
+  newsletter.addEventListener("submit", function(event){
+    
+
+    let inputEmailNews = document.getElementById("email_news");
+
+    if (inputEmailNews.value == "") {
+      event.preventDefault();
       alert("Preencha o email");
-      document.getElementById("email").focus();
-      return false;
-    }
-    return true;
-  }
-
-    /* Contato */
-    /*
-    function Enviar() {
-
-      let name = document.getElementById("nameid");
+    }else if (inputEmailNews.value.length < 4) {
+      event.preventDefault();
+      alert("O campo e-mail deve estar completo");
+    }else {
+      alert ("O e-mail: " + inputEmailNews.value + " foi cadastrado com sucesso!")
+    } 
   
-      if (name.value != "") {
-          alert('Obrigado sr(a) ' + name.value + ' os seus dados foram encaminhados com sucesso');
-      }
-  }*/
+    localStorage.setItem('Email newsletter: ', inputEmailNews.value)
+  });  
 
-  /*enviar formulario*/
-  document.querySelector("#menu_form").onsubmit = function(event){
-    event.preventDefault();
-    console.log('quero enviar o formulario')
-};
 
 
 // Validação de formulário  
@@ -49,8 +44,10 @@ formulario.addEventListener("submit", function(event){
   
   let erros = []
   let inputName = document.getElementById("nameid");
-/*perguntar pra prof se nesse caso estava dando erro pq o querySelector retorna 
-classe e nesse caso era pra pegar pelo id*/
+  let inputEmail = document.getElementById("email");
+  let inputEndereco = document.getElementById("address");
+  let inputNumero = document.getElementById("number");
+  let inputMensagem = document.getElementById("mensagem");
 
 
   if (inputName.value == "") {
@@ -64,14 +61,22 @@ classe e nesse caso era pra pegar pelo id*/
     let ulErros = document.querySelector("div.erros ul");
   for(let i = 0; i < erros.length; i++){
     ulErros.innerHTML += '<li>' + erros[i] + '</li>'}  
+  }else if(erros.length <= 0){
+    alert('Obrigado Sr(a) ' + inputName.value + ' os seus dados foram encaminhados com sucesso!');
   }
+
   localStorage.setItem('Nome', inputName.value)
+  localStorage.setItem('Email', inputEmail.value)
+  localStorage.setItem('Endereço', inputEndereco.value)
+  localStorage.setItem('Número', inputNumero.value)
+  localStorage.setItem('Mensagem', inputMensagem.value)
 });
 
-
-
-// como vejo o que o usuario imprimiu?
-console.log(formulario.innerHTML)
+  /*enviar formulario*/
+  document.querySelector("#menu_form").onsubmit = function(event){
+    event.preventDefault();
+    console.log('quero enviar o formulario')
+};
 
 
 
