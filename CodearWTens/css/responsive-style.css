@@ -41,7 +41,7 @@
 @media (max-width:767px){
     /* CSS GERAL */
     body,html{
-        font-size:8px;
+        font-size:9.5px;
     }
     .section-subtitle{
         max-width: 80%;
@@ -54,11 +54,20 @@
     .banner_section .carousel-item{
         height:70vh;
     }
+
+    h1 {
+        font-size: 65px;
+    }
 }
+
 @media (max-width:590px){
 
     /* CSS GERAL*/
     body,html{
-        font-size:7px;
+        font-size:9.5px;
+    }
+
+    h1 {
+        font-size: 60px;
     }
 }

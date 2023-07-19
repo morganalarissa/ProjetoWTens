@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=pt-br">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -41,7 +41,7 @@
                 <a class="nav-link" href="paginas/loja.html">Loja</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="aulas.html">Aulas</a>
+                <a class="nav-link" href="paginas/aulas.html">Aulas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="paginas/contato.html">Contato</a>
@@ -196,12 +196,11 @@
         <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
           <h5>Newsletter</h5>
           <div class="form-group mb-4">
-            <form name="form_news" id="form_news">
-            <input type="email" id="email_news" name="email_news" class="form-control bg-transparent" placeholder="Digite seu e-mail aqui:">
-            <button type="submit" class="btn main-btn">Inscreva-se</button>
+            <form id="verificaForm">
+              <input type="email" id="email" name="email" class="form-control bg-transparent" placeholder="Digite seu e-mail aqui:">
+              <input type="submit" onclick="return validateEmail()" value="Inscreva-se" class="btn main-btn">
             </form>
           </div>
-
           <h5>Fique Conectado</h5>
           <ul class="social-network d-flex align-items-center p-0">
             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>

@@ -273,7 +273,7 @@ section {
     max-width: 1320px;
     margin: auto;
     z-index: 999;
-    transition: 0.3s all ease-in-out;
+    transition: 0.2s all ease-in-out; 
 }
 
 /* Seção do banner*/
@@ -318,8 +318,9 @@ section {
     background-size: cover;
     background-position: no-repeat;
     background-position: top center;
-    padding-top: 15rem;
+    padding-top: 1.5rem; /*alterar o tamanho da imagem do footer*/
     padding-bottom: 0rem;
+   
 }
 
 .footer_wrapper h5 {
@@ -348,8 +349,8 @@ section {
     font-size: 1.6rem;
     padding-left: 1.5rem;
     position: relative;
-    -webkit-transition: all 0.3s ease-out 0s;
-    transition: all 0.3s ease-out 0s;
+    -webkit-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
 }
 
 .footer_wrapper .link-widget li a:before {
@@ -379,8 +380,8 @@ section {
     text-align: center;
     font-size: 1.2rem;
     border-radius: 100%;
-    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .footer_wrapper .social-network a:hover {
@@ -405,13 +406,14 @@ section {
 .footer_wrapper .copyright-section {
     background-color: var(--secondary-color);
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 1rem; /*alterar o tamanho da imagem do footer*/
 }
 
 .footer_wrapper .copyright-section p {
     margin-top: 0;
-    padding: 3rem 0;
+    padding: 1.5rem 0; /*alterar o tamanho da coply do footer*/
     line-height: 0;
+    font-size: 1.3rem;
 }
 
 .footer_wrapper .copyright-section a {
@@ -446,6 +448,8 @@ section {
 
 .contato .contact-form textarea {
     min-height: 15rem;
+    background:url(https://imgur.com/SlujS84.png) center center no-repeat;
+    background-size: cover; /*letras fica em cima da imagem*/
 }
 
 .contato .contact-form .info-box li {
@@ -612,3 +616,5 @@ section {
     text-align: center;
 
 }
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -76,20 +76,19 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 contact-form">
-               <!-- Mostrar os erros -->
-  <div class="erros">
-    <ul></ul>
-  </div>
-
           <div class="row">  
             <div class="col-lg-7 mb-5">
               <div class="row g-3">
                 <form name="menu_form" id="menu_form">
+
+                  <div id="msgError"></div>
+                  <div id="msgSuccess"></div>
+                  
                  <div class="col-md-6 mb-4">
-                  <input type="text" id="nameid" name="name"  class="form-control" placeholder="Nome: " required>
+                  <input type="text" id="nameid" name="nameid" class="form-control" placeholder="Nome: " required>
                  </div>
                  <div class="col-md-6 mb-4">
-                  <input type="email" id="email" name="email" class="form-control" placeholder="E-mail: " required>
+                  <input type="text" id="emailid" name="emailid" class="form-control" placeholder="E-mail: " required>
                  </div>
                  <div class="col-md-6 mb-4">
                   <input type="text" id="address" name="address" class="form-control" placeholder="Endereço: " required>
@@ -97,13 +96,11 @@
                  <div class="col-md-6 mb-4">
                   <input type="number" id="number" name="number" class="form-control" placeholder="Número: " required>
                  </div>
-                  <div class="row-10">
-                  <div class= "col-12 mb-4" >
-                  <input type="text" id="mensagem" name="mensagem" class="form-control" placeholder="Digite sua mensagem..." required>
-                 </div>
+                 <div class="col-12 mb-4">
+                  <textarea type="text" id="massage" name="message" class="form-control" minlength="10" maxlength="70" placeholder="Digite sua mensagem..." required></textarea>
                  </div>
                  <div class="col-12 mb-4">
-                   <input type="submit" id="submit" name="submit" class="btn main-btn" value="Enviar"/>
+                   <input type="submit" id="submit" name="submit" class="btn main-btn" onclick="enviar()" value="Enviar"/>
                  </div> 
                 </form>
               </div>
@@ -133,8 +130,6 @@
       </div>
     </div>
   </section>
-
-  
 
   <!--Seção do Footer-->
   <section class="footer_wrapper mt-3 mb-md-0">
@@ -176,10 +171,10 @@
         <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
           <h5>Newsletter</h5>
           <div class="form-group mb-4">
-          <form onSubmit="return verificaForm()">
-            <input type="email" id="email" name="email" class="form-control bg-transparent" placeholder="Digite seu e-mail aqui:">
-            <button type="submit" class="btn main-btn">Inscreva-se</button>
-          </form>
+            <form id="verificaForm">
+              <input type="email" id="email" name="email" class="form-control bg-transparent" placeholder="Digite seu e-mail aqui:">
+              <input type="submit" onclick="return validateEmail()" value="Inscreva-se" class="btn main-btn">
+            </form>
         </div> 
           <h5>Fique Conectado</h5>
           <ul class="social-network d-flex align-items-center p-0">

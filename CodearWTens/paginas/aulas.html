@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -94,7 +94,7 @@
                   desconto!</p>
               </div>
               <div class=link-aula>
-                <a href="aulas.html" class="btn main-btn">Saiba mais</a>
+                <input type="button" class="btn main-btn" onclick="saibaMais()" value="Saiba Mais">
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
                   desconto!</p>
               </div>
               <div class=link-aula>
-                <a href="aulas.html" class="btn main-btn">Saiba mais</a>
+                <input type="button" class="btn main-btn" onclick="saibaMais()" value="Saiba Mais">
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@
                   desconto!</p>
               </div>
               <div class=link-aula>
-                <a href="aulas.html" class="btn main-btn">Saiba mais</a>
+                <input type="button" class="btn main-btn" onclick="saibaMais()" value="Saiba Mais">
               </div>
             </div>
           </div>
@@ -145,7 +145,7 @@
                   desconto!</p>
               </div>
               <div class=link-aula>
-                <a href="aulas.html" class="btn main-btn">Saiba mais</a>
+                <input type="button" class="btn main-btn" onclick="saibaMais()" value="Saiba Mais">
               </div>
             </div>
           </div>
@@ -194,9 +194,9 @@
         <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
           <h5>Newsletter</h5>
           <div class="form-group mb-4">
-            <form onSubmit="return verificaForm()">
+            <form id="verificaForm">
               <input type="email" id="email" name="email" class="form-control bg-transparent" placeholder="Digite seu e-mail aqui:">
-              <button type="submit" class="btn main-btn">Inscreva-se</button>
+              <input type="submit" onclick="return validateEmail()" value="Inscreva-se" class="btn main-btn">
             </form>
           </div>
           <h5>Fique Conectado</h5>
